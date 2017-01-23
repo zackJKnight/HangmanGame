@@ -6,7 +6,7 @@ Copy-Item ./HangmanGame.psm1 $pshome/Modules/HangmanGame -Force -Verbose
 Import-Module $pshome/Modules/HangmanGame/HangmanGame.psm1 -Force -Verbose
 #>
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
-$sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
+$sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.ps1', '.psm1'
 . "$here/$sut"
 Import-Module .\HangmanGame.psm1
 #$dat = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Data\.', '.'
