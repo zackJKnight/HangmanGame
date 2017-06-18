@@ -1,12 +1,4 @@
 $GameData = @{
-    BodyParts = @(
-        Head = @{ID = 1; DefaultImage = '{)'},
-        Torso = @{ID = 2; DefaultImage = '|'},
-        RightArm = @{ID = 3; DefaultImage = '\'},
-        LeftArm = @{ID = 4; DefaultImage = '/'},
-        RightLeg = @{ID = 5; DefaultImage = '/'},
-        LeftLeg = @{ID = 6; DefaultImage = '\'}
-    );
 TurnStates = @(
         'new game',
         'win turn',
@@ -19,9 +11,9 @@ TurnStates = @(
 Gallows = @"
     ________` ` ` ` ` ` ` ` `
     |\|     |` ` ` ` ` ` ` `
-    |\|    $($Parts.Head)` ` ` ` ` ` ` `
-    |\|    $($Parts.RightArm)$($PartsHash.Torso)$($this.BodyPartsHash.LeftArm.DefaultImage)` ` ` ` ` ` `
-    |\|    $($BodyPartsHash.RightLeg) $($BodyPartsHash.LeftLeg)` ` ` ` ` ` `
+    |\|    $($this.Parts.Head.DefaultImage)` ` ` ` ` ` ` `
+    |\|    $($this.Parts.RightArm.DefaultImage)$($this.Parts.Torso.DefaultImage)$($this.Parts.LeftArm.DefaultImage)` ` ` ` ` ` `
+    |\|    $($this.Parts.RightLeg.DefaultImage) $($this.Parts.LeftLeg.DefaultImage)` ` ` ` ` ` `
 ==========` ` ` ` ` ` ` ` ` ` `
 `[        `]` ` ` ` ` ` ` ` ` 
 "@

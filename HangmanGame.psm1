@@ -2,6 +2,7 @@
 #And a gift to my father and my son for their love of game making.
 #Zack Knight 2017
 . .\HangmanGame.Data.ps1
+$hangmanJson = Get-Content .\HangmanGame.Data.json
 
 class BodyPart {
     [int]$ID
@@ -19,6 +20,19 @@ class BodyPart {
     }
 }
 
+$json = ConvertFrom-Json "$hangmanJson"
+
+$Parts = @()
+
+foreach($part in $json.BodyParts) {
+    try{
+    $Parts += new BodyPart($part.ID, $part.Name, $part.DefaultImage)
+    }
+    catch{
+        return $Error
+    }
+}
+
 function Get-Word {
     $request = Invoke-WebRequest http://randomword.setgetgo.com/get.php | Select-Object -ExpandProperty Content
     return $request
@@ -33,20 +47,10 @@ function Write-BlankLines {
 
 function Write-Gallows {
     Param(
-        [hashtable]$state = 'new game'
+        $state = 'new game'
     )
-    
-    $Parts = @()
-    foreach($part in $GameData.BodyParts) {
-        try{
-            #TODO Start here. the data structure is incorrect
-            #the keys are strings and they actually have hastables.... you need to change the data structure.
-        $Parts += new BodyPart($part.ID.Value, $part, $part.DefaultImage.Value)
-        }
-        catch{
-            return $Error
-        }
-    }
+
+# wrong guesses - set a part count and foreach write a body part 
     
     if($Parts -ne $null){
         return $true
