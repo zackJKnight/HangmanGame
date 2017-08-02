@@ -1,7 +1,7 @@
 
 if(-not (Test-Path $pshome/Modules/HangmanGame)){
     New-Item "$pshome/Modules/HangmanGame" -ItemType Directory
-
+}
 Copy-Item ./HangmanGame.psm1 $pshome/Modules/HangmanGame -Force -Verbose
 Import-Module $pshome/Modules/HangmanGame/HangmanGame.psm1 -Force -Verbose
 
