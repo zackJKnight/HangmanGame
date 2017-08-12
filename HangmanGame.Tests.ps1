@@ -1,13 +1,4 @@
-<#
-if(-not (Test-Path $pshome/Modules/HangmanGame)){
-    New-Item "$pshome/Modules/HangmanGame" -ItemType Directory
-}
-#>
-Copy-Item .\ 'C:/program files (x86)/windowspowershell/Modules/HangmanGame' -Force -Verbose -Recurse
-$modulePath = $($Env:PSModulePath).Split(';')[0]
-$here = Split-Path -Parent $MyInvocation.MyCommand.Path
-$sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.ps1', '.psm1'
-Import-Module HangmanGame.psm1 -Force
+Import-Module ./HangmanGame.psm1 -Force
 
 Describe -Name Write-Gallows {
     InModuleScope HangmanGame {
