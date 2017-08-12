@@ -1,6 +1,5 @@
 #TODO generate the gallows rather than hardcoding it
 
-
 Param(
 $quit = $false,
 $wrongLetters = @(),
@@ -9,7 +8,7 @@ $matchedLetters = @()
 
 . ./HangmanGame.Data.ps1
 Copy-Item ./HangmanGame.psm1 $pshome/Modules/HangmanGame -Force -Verbose
-Import-Module $pshome/Modules/HangmanGame/HangmanGame -Force
+Import-Module -Global .\HangmanGame.psm1 -Force
 
 function Write-Puzzle {
     Param(
