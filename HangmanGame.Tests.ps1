@@ -2,8 +2,6 @@
 if(-not (Test-Path $pshome/Modules/HangmanGame)){
     New-Item "$pshome/Modules/HangmanGame" -ItemType Directory
 }
-Copy-Item ./HangmanGame.psm1 $pshome/Modules/HangmanGame -Force -Verbose
-Import-Module $pshome/Modules/HangmanGame/HangmanGame.psm1 -Force -Verbose
 #>
 Copy-Item .\ 'C:/program files (x86)/windowspowershell/Modules/HangmanGame' -Force -Verbose -Recurse
 $modulePath = $($Env:PSModulePath).Split(';')[0]

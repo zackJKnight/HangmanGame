@@ -7,8 +7,9 @@ $matchedLetters = @()
 )
 
 . ./HangmanGame.Data.ps1
-Copy-Item ./HangmanGame.psm1 $pshome/Modules/HangmanGame -Force -Verbose
-Import-Module -Global .\HangmanGame.psm1 -Force
+Copy-Item ./HangmanGame.psm1 $Env:ProgramFiles/Windows/Powershell/Modules/HangmanGame -Force -Verbose
+Copy-Item ./HangmanGame.Data.ps1 $Env:ProgramFiles/Windows/Powershell/Modules/HangmanGame -Force -Verbose
+Import-Module -Global $Env:ProgramFiles/Windows/Powershell/Modules/HangmanGame/HangmanGame.psm1 -Force
 
 function Write-Puzzle {
     Param(
