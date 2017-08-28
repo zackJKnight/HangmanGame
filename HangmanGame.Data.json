@@ -1,0 +1,33 @@
+{"BodyParts" : [
+        {
+            "Name":"Head",
+            "ID" : 1, 
+            "DefaultImage" : "{)"
+        },
+        {
+            "Name": "Torso",
+             "ID" : 2,
+             "DefaultImage" : "|"
+        },
+        {
+            "Name": "RightArm",
+            "ID" : 3,
+            "DefaultImage" : "\\"
+        },
+        {
+            "Name": "LeftArm",
+            "ID" : 4, 
+            "DefaultImage": "/"
+        },
+        {
+            "Name": "RightLeg",
+            "ID" : 5,
+            "DefaultImage":"/"
+        },
+        {
+            "Name": "LeftLeg",
+            "ID" : 6,
+            "DefaultImage":"\\"
+        }
+        //This is a change.
+]}
