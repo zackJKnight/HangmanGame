@@ -1,7 +1,7 @@
 #This is my personal reference guide for basic PowerShell concepts.
 #And a gift to my father and my son for their love of game making.
 #Zack Knight 2017
-. .\HangmanGame.Data.ps1
+#. .\HangmanGame.Data.ps1
 $hangmanJson = Get-Content .\HangmanGame.Data.json
 
 class BodyPart {
@@ -26,7 +26,7 @@ $Parts = @()
 
 foreach($part in $json.BodyParts) {
     try{
-    $Parts += new BodyPart($part.ID, $part.Name, $part.DefaultImage)
+    $Parts += New-Object BodyPart($part.ID, $part.Name, $part.DefaultImage)
     }
     catch{
         return $Error
@@ -34,7 +34,7 @@ foreach($part in $json.BodyParts) {
 }
 
 function Get-Word {
-    $request = Invoke-WebRequest http://randomword.setgetgo.com/get.php | Select-Object -ExpandProperty Content
+    $request = Invoke-WebRequest http://setgetgo.com/randomword/get.php | Select-Object -ExpandProperty Content
     return $request
 }
 
@@ -62,6 +62,7 @@ function Write-Gallows {
 
 function Write-Guesses {
     Param(
+        [Parameter(Mandatory = $true)]
         $wrongLetters
     )
     Write-Host "These are the letters that weigh against you:" -ForegroundColor Yellow
