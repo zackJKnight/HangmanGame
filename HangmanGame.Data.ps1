@@ -11,9 +11,9 @@ TurnStates = @(
 Gallows = @"
     ________` ` ` ` ` ` ` ` `
     |\|     |` ` ` ` ` ` ` `
-    |\|    $($this.Parts.Head.DefaultImage)` ` ` ` ` ` ` `
-    |\|    $($this.Parts.RightArm.DefaultImage)$($this.Parts.Torso.DefaultImage)$($this.Parts.LeftArm.DefaultImage)` ` ` ` ` ` `
-    |\|    $($this.Parts.RightLeg.DefaultImage) $($this.Parts.LeftLeg.DefaultImage)` ` ` ` ` ` `
+    |\|    $($Parts.Head.DefaultImage)` ` ` ` ` ` ` `
+    |\|    $($Parts.RightArm.DefaultImage)$($Parts.Torso.DefaultImage)$($Parts.LeftArm.DefaultImage)` ` ` ` ` ` `
+    |\|    $($Parts.RightLeg.DefaultImage) $($Parts.LeftLeg.DefaultImage)` ` ` ` ` ` `
 ==========` ` ` ` ` ` ` ` ` ` `
 `[        `]` ` ` ` ` ` ` ` ` 
 "@

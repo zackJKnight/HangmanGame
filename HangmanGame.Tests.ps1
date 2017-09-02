@@ -11,7 +11,7 @@ Describe Write-Guesses {
     It 'Writes the letters that have been guessed incorrectly' {
         $testWrongLetters = @()
         $testWrongLetters += 'a'
-        Write-Guesses $testWrongLetters | Should Not Be $null
+        Write-Guesses $testWrongLetters | Should Be @('a')
     }
 }
 }

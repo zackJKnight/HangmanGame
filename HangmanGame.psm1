@@ -20,6 +20,8 @@ class BodyPart {
     }
 }
 
+function Get-HangmanParts {
+
 $json = ConvertFrom-Json "$hangmanJson"
 
 $Parts = @()
@@ -32,7 +34,8 @@ foreach($part in $json.BodyParts) {
         return $Error
     }
 }
-
+return $Parts
+}
 function Get-Word {
     $request = Invoke-WebRequest http://setgetgo.com/randomword/get.php | Select-Object -ExpandProperty Content
     return $request

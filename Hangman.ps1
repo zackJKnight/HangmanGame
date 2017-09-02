@@ -6,7 +6,7 @@ $wrongLetters = @(),
 $matchedLetters = @()
 )
 
-#. ./HangmanGame.Data.ps1
+. ./HangmanGame.Data.ps1
 Import-Module ./HangmanGame.psm1 -Force
 
 function Write-Puzzle {
@@ -37,8 +37,9 @@ function Clear-Values {
 }
 Clear-Values
 Write-Host '====================PowerShell Hangman======================='
-Write-Host $Gallows -ForegroundColor Red -BackgroundColor Gray
-
+$Parts = Get-HangmanParts
+#Write-Host $GameData.Gallows -ForegroundColor Black -BackgroundColor Gray
+Write-Gallows
 $randomWord = (Get-Word).ToUpper()
 $answer = $randomWord.ToCharArray() | Sort-Object -Descending| Get-Unique -AsString
 
